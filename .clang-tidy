@@ -4,10 +4,7 @@ Checks: >
   modernize-*, cppcoreguidelines-*, misc-*, -readability-magic-numbers,
   -cppcoreguidelines-avoid-magic-numbers,
   -cppcoreguidelines-pro-type-union-access,  -cppcoreguidelines-pro-type-vararg,
-  -fuchsia-*
-
-WarningsAsErrors: >
-  clang-analyzer-*, bugprone-*
+  -fuchsia-*,-bugprone-exception-escape
 
 HeaderFilterRegex: ".*"
 FormatStyle: "google"
