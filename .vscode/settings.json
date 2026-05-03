@@ -1,0 +1,19 @@
+{
+    "clang-format.style": "Google",
+    "clangd.arguments": [
+        "--compile-commands-dir=build",
+        "--background-index",
+        "-j=4",
+        "--pretty",
+        "--log=info"
+    ],
+    "clangd.checkUpdates": true,
+    "clangd.enable": true,
+    "cmake.cmakePath": "cmake-4",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 1
+}

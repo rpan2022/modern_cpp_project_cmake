@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "clang21-debug",
+      "displayName": "Clang 21 Debug",
+      "description": "Debug build using Clang++-21, C++23, Ninja",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++-21",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "clang21-release",
+      "displayName": "Clang 21 Release",
+      "description": "Release build using Clang++-21, C++23, Ninja",
+      "inherits": "clang21-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang21-debug-build",
+      "configurePreset": "clang21-debug",
+      "displayName": "Build Debug"
+    },
+    {
+      "name": "clang21-release-build",
+      "configurePreset": "clang21-release",
+      "displayName": "Build Release"
+    }
+  ]
+}

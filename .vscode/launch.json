@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug with CodeLLDB",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/hello",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "CMake: Build Debug",
+            "sourceLanguages": [
+                "cpp"
+            ],
+            "stopOnEntry": false,
+            "expressions": "native"
+        }
+    ]
+}

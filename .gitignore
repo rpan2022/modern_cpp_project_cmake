@@ -1,0 +1,65 @@
+# ==============================================
+# CMake 生成文件
+# ==============================================
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+build/
+out/
+build-*
+*.cmake
+
+# ==============================================
+# Ninja 构建系统
+# ==============================================
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ==============================================
+# 编译器生成 / 可执行文件
+# ==============================================
+*.o
+*.obj
+*.out
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# ==============================================
+# VSCode 编辑器
+# ==============================================
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+*.code-workspace
+
+# ==============================================
+# 调试 / 日志
+# ==============================================
+*.log
+*.debug
+.gdbhistory
+.lldbhistory
+
+# ==============================================
+# 系统文件
+# ==============================================
+.DS_Store
+.Thrashes
+*.swp
+*.swo
+*~
