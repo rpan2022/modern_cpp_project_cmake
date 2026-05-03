@@ -4,6 +4,7 @@
         "--compile-commands-dir=build",
         "--background-index",
         "-j=4",
+        "--clang-tidy",
         "--pretty",
         "--log=info"
     ],
@@ -15,5 +16,8 @@
     "editor.formatOnSave": true,
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "yaml.schemas": {
+        "https://www.schemastore.org/clang-tidy.json": "file:///home/x450jf/cmake_project_basic/.clang-tidy"
+    }
 }

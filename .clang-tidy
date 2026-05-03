@@ -1,0 +1,13 @@
+---
+Checks: >
+  -*, clang-analyzer-*, bugprone-*, performance-*, portability-*, readability-*,
+  modernize-*, cppcoreguidelines-*, misc-*, -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-type-union-access,  -cppcoreguidelines-pro-type-vararg,
+  -fuchsia-*
+
+WarningsAsErrors: >
+  clang-analyzer-*, bugprone-*
+
+HeaderFilterRegex: ".*"
+FormatStyle: "google"

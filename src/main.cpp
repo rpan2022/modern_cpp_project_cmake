@@ -2,7 +2,7 @@
 #include <print>
 #include <vector>
 
-int main() {
+auto main() -> int {
   std::cout << "Hello C++23 with Clang-21 + CMake + Ninja!" << std::endl;
 
   std::print("current cpp version: {}\n", __cplusplus);
