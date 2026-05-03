@@ -19,5 +19,6 @@
     "window.zoomLevel": 1,
     "yaml.schemas": {
         "https://www.schemastore.org/clang-tidy.json": "file:///home/x450jf/cmake_project_basic/.clang-tidy"
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
