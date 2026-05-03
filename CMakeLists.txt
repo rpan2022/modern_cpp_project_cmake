@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.3.2)
+cmake_minimum_required(VERSION 4.1.0)
 project(modern_cpp_demo)
 
 # 自动加载 Conan 工具链

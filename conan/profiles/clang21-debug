@@ -1,0 +1,11 @@
+[settings]
+build_type = Debug
+compiler = clang
+compiler.version = 21
+compiler.cppstd = 23
+os = Linux
+arch = x86_64
+
+[conf]
+# 全局默认使用 Ninja 生成器
+tools.cmake.cmaketoolchain:generator = Ninja
