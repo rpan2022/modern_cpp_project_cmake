@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+# 只检测本次暂存的 C++ 源码文件
+CHANGED_FILES=$(git diff --cached --name-only --diff-filter=ACM \
+  | grep -E '\.(cpp|h|hpp|hxx)$')
+
+# 无 C++ 文件变更，直接放行
+if [ -z "$CHANGED_FILES" ]; then
+  exit 0
+fi
+
+echo -e "\033[34m🔍 执行 Clang-Tidy 静态代码检查...\033[0m"
+
+# 读取项目根目录 .clang-tidy 配置，依赖 build/compile_commands.json
+clang-tidy \
+  --config-file=.clang-tidy \
+  -p build \
+  $CHANGED_FILES
+
+# 检查失败则阻断提交
+if [ $? -ne 0 ]; then
+  echo -e "\033[31m❌ Clang-Tidy 检测到问题，提交已终止！\033[0m"
+  echo -e "\033[33m💡 修复问题后再提交，或使用 clang-tidy --fix 自动修复\033[0m"
+  exit 1
+fi
+
+echo -e "\033[32m✅ Clang-Tidy 检查通过\033[0m"
+exit 0

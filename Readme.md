@@ -110,6 +110,15 @@ target_include_directories(hello
 - Clang + CodeLLDB 调试环境
 - 可直接用于课程作业、小项目、Demo
 
+### 🧹 代码静态检查（Clang-Tidy 前置钩子）
+本仓库内置 `clang-tidy` 提交钩子，提交代码前自动静态检查。
+
+#### 启用钩子
+```bash
+./scripts/install-githooks.sh
+
+# clang-tidy -p build 源码文件 --fix
+
 ---
 
 ## 📄 License
