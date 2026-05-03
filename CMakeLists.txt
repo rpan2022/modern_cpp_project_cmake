@@ -1,13 +1,32 @@
 cmake_minimum_required(VERSION 4.1.0)
-project(modern_cpp_demo)
+project(cpp_project)
 
-# 自动加载 Conan 工具链
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
-# 可执行文件
-add_executable(hello src/main.cpp)
-target_include_directories(hello PRIVATE include)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# 第三方库
+# 主程序
+add_executable(app src/main.cpp)
+target_include_directories(app PRIVATE include)
 find_package(nlohmann_json REQUIRED)
-target_link_libraries(hello PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(app PRIVATE nlohmann_json::nlohmann_json)
+
+# ===================== TESTS =====================
+enable_testing()
+find_package(GTest REQUIRED)
+
+add_executable(unit_tests
+    test/test_demo.cpp
+)
+target_include_directories(unit_tests PRIVATE include)
+target_link_libraries(unit_tests
+    PRIVATE
+    nlohmann_json::nlohmann_json
+    GTest::gtest
+    GTest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(unit_tests)
